@@ -14,7 +14,7 @@ class baseDatos{
 
            $datosBD="mysql:host=localhost;dbname=tiendaropa";    
            $conexionBD= new PDO($datosBD,$this->usuarioBD,$this->passwordBD);
-           echo("exito");
+           //echo("exito");
            return($conexionBD);
 
         }catch(PDOException $error){
@@ -34,11 +34,7 @@ class baseDatos{
         $resultado=$insertarDatos->execute();        
 
          //Verifico el resultado
-        if($resultado){     
-           echo("Usuario agregado");         
-        }else{    
-            echo("Error");  
-        } 
+       
     }
 
     public function consultarDatos($consultaSQL){
@@ -59,6 +55,43 @@ class baseDatos{
 
         
     }
+     
+    public function  eliminarDatos($consultaSQL){
+       //establecer una conexion
+       $conexionBD=$this->conectarBD();  
+       
+       //preparar consulta
+       $eliminarDatos=$conexionBD->prepare($consultaSQL);
+
+        //ejecutar la consulta
+        $resultado=$eliminarDatos->execute(); 
+
+          //Verifico el resultado
+          //if($resultado){     
+           // echo("Usuario eliminado");         
+         //}else{    
+           //  echo("Error");  
+         //} 
+    }
+
+    public function editarDatos($consultaSQL){
+        //establecer una conexion
+       $conexionBD=$this->conectarBD();  
+       
+       //preparar consulta
+       $editarDatos=$conexionBD->prepare($consultaSQL);
+
+        //ejecutar la consulta
+        $resultado=$editarDatos->execute(); 
+
+          //Verifico el resultado
+          //if($resultado){     
+           // echo("Usuario editado");         
+         //}else{    
+           //  echo("Error");  
+         //} 
+    }
+
     }    
 
 ?>

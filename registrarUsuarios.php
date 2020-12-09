@@ -10,15 +10,18 @@
     $marca=$_POST['marca'];
     $precio=$_POST['precio'];
     $descripcion=$_POST['descripcion'];
+    $foto=$_POST['foto'];
 
     //1.copia u objeto de la clase BD
     $transaccion=new baseDatos();
 
     //crear consulta
-    $consultaSQL="INSERT INTO productos(nombre, marca, precio, descripcion) VALUES ('$nombre','$marca','$precio','$descripcion')";
+    $consultaSQL="INSERT INTO productos(nombre, marca, precio, descripcion, foto) VALUES ('$nombre','$marca','$precio','$descripcion','$foto')";
 
    //llamo al metodo de la clase BD agregardatos()
    $transaccion->agregarDatos($consultaSQL);   }
+
+   header("location:index.php");
 
 ?>
 

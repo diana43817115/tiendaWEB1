@@ -10,6 +10,19 @@
     <header>
     </header>
     <main>
+
+    <!-- Example split danger button -->
+<div class="btn-group">
+
+  <button type="button" class="btn btn-danger" Lista de Productos style="BORDER: rgb(128,128,128) 1px solid; FONT-SIZE: 12pt; FONT-FAMILY: Verdana; 
+         BACKGROUND-COLOR: rgb(233,233,233)">   
+  <a href="listaUsuarios.php" target="_blank">CLICK AQUI PARA IR A LISTA DE PRODUCTOS</a>
+  </button>  
+ 
+  
+</div>
+
+
         <div class="container">
             <form action="registrarUsuarios.php" method="POST">
             <br>
@@ -36,18 +49,26 @@
                     </div>
                 </div>
 
-
                 <div class="row mt-3">                                  
                     <div class="col">
                     <br>
                         <label class="font-weight-bold">Descripción:</label>
                         <textarea class="form-control" rows="4" name="descripcion"></textarea>
                     </div>
-                </div>      
+                </div>  
+
+                <div class="row mt-3">                                  
+                    <div class="col">
+                    <br>
+                        <label class="font-weight-bold">Fotografia:</label>
+                        <input type="text" class="form-control" placeholder="URL FOTOGRAFIA :" name="foto">                        
+                    </div>
+                </div> 
                         <br>
-                        <br>                
-            
+                        <br>             
+
                 <button type="submit" class="btn btn-info btn-block" name="botonEnvio">Registrar</button>
+
             </form>
         </div>
     
